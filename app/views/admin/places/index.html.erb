@@ -1,0 +1,54 @@
+# gerado com IA
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-12">
+      <h2>Places</h2>
+      <hr>
+      <div class="mb-3">
+        <%= link_to 'New Place', new_admin_place_path, class: 'btn btn-primary' %>
+      </div>
+
+      <div class="table-responsive">
+        <table class="table table-striped table-hover">
+          <thead class="table-dark">
+            <tr>
+              <th>Name</th>
+              <th>Address</th>
+              <th>Description</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @places.each do |place| %>
+              <tr>
+                <td><%= place.name %></td>
+                <td><%= place.address %></td>
+                <td><%= truncate(place.description, length: 100) %></td>
+                <td>
+                  <span class="badge <%= place.active? ? 'bg-success' : 'bg-danger' %>">
+                    <%= place.active? ? 'Active' : 'Inactive' %>
+                  </span>
+                </td>
+                <td>
+                  <%= link_to 'Show', admin_place_path(place), class: 'btn btn-info btn-sm' %>
+                  <%= link_to 'Edit', edit_admin_place_path(place), class: 'btn btn-warning btn-sm' %>
+                  <%= link_to 'Delete', admin_place_path(place),
+                      method: :delete,
+                      data: { confirm: 'Are you sure?' },
+                      class: 'btn btn-danger btn-sm' %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+
+      <% if @places.empty? %>
+        <div class="alert alert-info">
+          No places found.
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

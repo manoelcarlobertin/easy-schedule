@@ -1,4 +1,5 @@
 class Event < ApplicationRecord
+  # before_action :authenticate_user!
   # o campo pode name allow_blank (vazio ou nil) sem que a validação seja aplicada aqui.
   validates :name, presence: true, length: { minimun: 2, maximum: 200, allow_blank: true }
   validates :description, presence: true

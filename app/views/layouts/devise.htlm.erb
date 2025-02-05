@@ -17,17 +17,7 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
   </head>
 
-   <body>
-    <div class="page">
-      <%= render "shared/header" %>
-
-      <%#= render "layouts/admin/navbar" %>
-      <div class="page-wrapper">
-        <div class="page-body">
-          <%= yield %>
-        </div>
-      </div>
-      <%#= render "layouts/admin/footer" %>
-    </div>
+  <body>
+    <%= yield %>
   </body>
 </html>

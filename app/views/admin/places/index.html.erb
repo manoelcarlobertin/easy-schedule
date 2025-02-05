@@ -20,35 +20,35 @@
             </tr>
           </thead>
           <tbody>
-            <% @places.each do |place| %>
+            <#% @places.each do |place| %>
               <tr>
-                <td><%= place.name %></td>
-                <td><%= place.address %></td>
-                <td><%= truncate(place.description, length: 100) %></td>
+                <td><%#= place.name %></td>
+                <td><%#= place.address %></td>
+                <td><%#= truncate(place.description, length: 100) %></td>
                 <td>
-                  <span class="badge <%= place.active? ? 'bg-success' : 'bg-danger' %>">
-                    <%= place.active? ? 'Active' : 'Inactive' %>
+                  <span class="badge <%#= place.active? ? 'bg-success' : 'bg-danger' %>">
+                    <%#= place.active? ? 'Active' : 'Inactive' %>
                   </span>
                 </td>
                 <td>
-                  <%= link_to 'Show', admin_place_path(place), class: 'btn btn-info btn-sm' %>
-                  <%= link_to 'Edit', edit_admin_place_path(place), class: 'btn btn-warning btn-sm' %>
-                  <%= link_to 'Delete', admin_place_path(place),
+                  <%#= link_to 'Show', admin_place_path(place), class: 'btn btn-info btn-sm' %>
+                  <%#= link_to 'Edit', edit_admin_place_path(place), class: 'btn btn-warning btn-sm' %>
+                  <%#= link_to 'Delete', admin_place_path(place),
                       method: :delete,
                       data: { confirm: 'Are you sure?' },
                       class: 'btn btn-danger btn-sm' %>
                 </td>
               </tr>
-            <% end %>
+            <%# end %>
           </tbody>
         </table>
       </div>
 
-      <% if @places.empty? %>
+      <%# if @places.empty? %>
         <div class="alert alert-info">
           No places found.
         </div>
-      <% end %>
+      <%# end %>
     </div>
   </div>
 </div>

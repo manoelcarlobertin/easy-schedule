@@ -1,0 +1,40 @@
+// Arquivo: _header.scss
+
+.navbar {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+.header-logo {
+  width: 25%;
+  height: auto; /* Mantém a proporção */
+}
+
+  .nav-item {
+    margin-left: 15px;
+
+    .nav-link {
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s ease-in-out;
+
+      &:hover {
+        color: #007bff;
+      }
+    }
+  }
+
+  .navbar-toggler {
+    border: none;
+
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+  }
+}
